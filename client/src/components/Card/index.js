@@ -6,7 +6,7 @@ import { idbPromise } from '../../utils/helpers';
 const Card = ({ card }) => {
     const [, dispatch] = useStoreContext();
 
-    const removeFromCart = item => {
+    const removeFromPassport = item => {
         dispatch({
             type: REMOVE_FROM_PASSPORT,
             _id: item._id
@@ -54,7 +54,7 @@ const Card = ({ card }) => {
                     <span
                         role="img"
                         aria-label="trash"
-                        onClick={() => removeFromCart(item)}
+                        onClick={() => removeFromPassport(item)}
                     >
                         🗑️
                     </span>
