@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { REMOVE_FROM_PASSPORT, UPDATE_PASSPORT } from '../../utils/actions';
+import { REMOVE_FROM_WALLET, UPDATE_WALLET } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
-const Card = ({ card }) => {
+const Card = ({ item }) => {
     const dispatch = useDispatch();
 
-    const removeFromPassport = item => {
+    const removeFromWallet = item => {
         dispatch({
-            type: REMOVE_FROM_PASSPORT,
+            type: REMOVE_FROM_WALLET,
             _id: item._id
         });
         idbPromise('card', 'delete', { ...item });
@@ -18,14 +18,14 @@ const Card = ({ card }) => {
       
         if (value === '0') {
           dispatch({
-            type: REMOVE_FROM_PASSPORT,
+            type: REMOVE_FROM_WALLET,
             _id: item._id
           });
 
           idbPromise('card', 'delete', { ...item });
         } else {
           dispatch({
-            type: UPDATE_PASSPORT,
+            type: UPDATE_WALLET,
             _id: item._id,
             purchaseQuantity: parseInt(value)
           });
@@ -54,7 +54,7 @@ const Card = ({ card }) => {
                     <span
                         role="img"
                         aria-label="trash"
-                        onClick={() => removeFromPassport(item)}
+                        onClick={() => removeFromWallet(item)}
                     >
                         🗑️
                     </span>
