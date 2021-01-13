@@ -1,35 +1,35 @@
 import React from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
-import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import { REMOVE_FROM_PASSPORT, UPDATE_PASSPORT } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
-const CartItem = ({ item }) => {
+const Card = ({ card }) => {
     const [, dispatch] = useStoreContext();
 
     const removeFromCart = item => {
         dispatch({
-            type: REMOVE_FROM_CART,
+            type: REMOVE_FROM_PASSPORT,
             _id: item._id
         });
-        idbPromise('cart', 'delete', { ...item });
+        idbPromise('card', 'delete', { ...item });
     };
     const onChange = (e) => {
         const value = e.target.value;
       
         if (value === '0') {
           dispatch({
-            type: REMOVE_FROM_CART,
+            type: REMOVE_FROM_PASSPORT,
             _id: item._id
           });
 
-          idbPromise('cart', 'delete', { ...item });
+          idbPromise('card', 'delete', { ...item });
         } else {
           dispatch({
-            type: UPDATE_CART_QUANTITY,
+            type: UPDATE_PASSPORT,
             _id: item._id,
             purchaseQuantity: parseInt(value)
           });
-          idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
+          idbPromise('card', 'put', { ...item, purchaseQuantity: parseInt(value) });
         }
       };
 
@@ -64,4 +64,4 @@ const CartItem = ({ item }) => {
     );
 }
 
-export default CartItem;
+export default Card;
