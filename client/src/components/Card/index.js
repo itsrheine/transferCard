@@ -1,10 +1,10 @@
 import React from 'react';
-import { useStoreContext } from '../../utils/GlobalState';
+import { useDispatch } from "react-redux";
 import { REMOVE_FROM_PASSPORT, UPDATE_PASSPORT } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
 const Card = ({ card }) => {
-    const [, dispatch] = useStoreContext();
+    const dispatch = useDispatch();
 
     const removeFromPassport = item => {
         dispatch({
