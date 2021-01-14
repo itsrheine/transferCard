@@ -27,11 +27,15 @@ const productSchema = new Schema({
   }
 =======
   },
+<<<<<<< HEAD
   // category: {
   //   type: Schema.Types.ObjectId,
   //   ref: 'Category',
   //   required: true
   // }
+>>>>>>> develop
+=======
+
 >>>>>>> develop
 });
 
