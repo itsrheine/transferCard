@@ -4,12 +4,12 @@ import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY,
-    ADD_TO_CART,
-    ADD_MULTIPLE_TO_CART,
-    REMOVE_FROM_CART,
-    UPDATE_CART_QUANTITY,
-    CLEAR_CART,
-    TOGGLE_CART
+    ADD_TO_WALLET,
+    ADD_MULTIPLE_TO_WALLET,
+    REMOVE_FROM_WALLET,
+    UPDATE_WALLET_QUANTITY,
+    CLEAR_WALLET,
+    TOGGLE_WALLET
   } from './actions';
 
 export const reducer = (state, action) => {
@@ -29,48 +29,48 @@ export const reducer = (state, action) => {
                 ...state,
                 currentCategory: action.currentCategory
             };
-        case ADD_TO_CART:
+        case ADD_TO_WALLET:
             return {
                 ...state,
-                cartOpen: true,
-                cart: [...state.cart, action.product]
+                walletOpen: true,
+                wallet: [...state.wallet, action.product]
             };
-        case ADD_MULTIPLE_TO_CART:
+        case ADD_MULTIPLE_TO_WALLET:
             return {
                 ...state,
-                cart: [...state.cart, ...action.products],
+                wallet: [...state.wallet, ...action.products],
             };
-        case REMOVE_FROM_CART:
-            let newState = state.cart.filter(product => {
+        case REMOVE_FROM_WALLET:
+            let newState = state.wallet.filter(product => {
                 return product._id !== action._id;
             });
 
             return {
                 ...state,
-                cartOpen: newState.length > 0,
-                cart: newState
+                walletOpen: newState.length > 0,
+                wallet: newState
             };
-        case UPDATE_CART_QUANTITY:
+        case UPDATE_WALLET_QUANTITY:
             return {
                 ...state,
-                cartOpen: true,
-                cart: state.cart.map(product => {
+                walletOpen: true,
+                wallet: state.wallet.map(product => {
                     if (action._id === product._id) {
                         product.purchaseQuantity = action.purchaseQuantity;
                     }
                     return product;
                 })
             };
-        case CLEAR_CART:
+        case CLEAR_WALLET:
             return {
                 ...state,
-                cartOpen: false,
-                cart: []
+                walletOpen: false,
+                wallet: []
             };
-        case TOGGLE_CART:
+        case TOGGLE_WALLET:
             return {
                 ...state,
-                cartOpen: !state.cartOpen
+                walletOpen: !state.walletOpen
             };
         default: 
             return state;

@@ -6,43 +6,44 @@ import { QUERY_PRODUCTS } from "../utils/queries";
 import spinner from '../assets/spinner.gif'
 import { useStoreContext } from "../utils/GlobalState";
 import {
-    REMOVE_FROM_CART,
-    UPDATE_CART_QUANTITY,
-    ADD_TO_CART,
+    REMOVE_FROM_WALLET,
+    UPDATE_WALLET_QUANTITY,
+    ADD_TO_WALLET,
     UPDATE_PRODUCTS,
 } from '../utils/actions';
-import Cart from '../components/Cart';
+import Wallet from '../components/Wallet';
 
 function Detail() {
     const [state, dispatch] = useStoreContext();
+
     const { id } = useParams();
 
     const [currentProduct, setCurrentProduct] = useState({})
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-    const { products, cart } = state;
+    const { products, wallet } = state;
 
-    const addToCart = () => {
-        const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    const addToWallet = () => {
+        const itemInWallet = wallet.find((walletItem) => walletItem._id === id);
 
-        if (itemInCart) {
+        if (itemInWallet) {
             dispatch({
-                type: UPDATE_CART_QUANTITY,
+                type: UPDATE_WALLET_QUANTITY,
                 _id: id,
-                purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+                purchaseQuantity: parseInt(itemInWallet.purchaseQuantity) + 1
             });
         } else {
             dispatch({
-                type: ADD_TO_CART,
+                type: ADD_TO_WALLET,
                 product: { ...currentProduct, purchaseQuantity: 1 }
             });
         }
     };
 
-    const removeFromCart = () => {
+    const removeFromWallet = () => {
         dispatch({
-          type: REMOVE_FROM_CART,
+          type: REMOVE_FROM_WALLET,
           _id: currentProduct._id
         });
       };
@@ -80,8 +81,8 @@ function Detail() {
                             Add to Cart
                         </button>
                         <button 
-                        disabled={!cart.find(p => p._id === currentProduct._id)} 
-                        onClick={removeFromCart}
+                        disabled={!wallet.find(p => p._id === currentProduct._id)} 
+                        onClick={removeFromWallet}
                         >
                         Remove from Cart
                         </button>
@@ -96,7 +97,7 @@ function Detail() {
             {
                 loading ? <img src={spinner} alt="loading" /> : null
             }
-            <Cart />
+            <Wallet />
         </>
     );
 };

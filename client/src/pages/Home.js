@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import ProductList from "../components/ProductList";
-import Cart from '../components/Cart';
+import Wallet from '../components/Wallet';
 
 
 const Home = () => {
   return (
     <div className="container">
     <ProductList />
-    <Cart />
+    <Wallet />
   </div>
   );
 };
