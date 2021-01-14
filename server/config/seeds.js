@@ -6,26 +6,25 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Ticket to LA',
+      name: 'One day pass',
       description:
-        'This ticket will give you an accesses to travel to LA',
+        '',
       image: '',
       price: 2.99,
       quantity: 500
     },
     {
-      name: 'Monthly subscription',
+      name: ' One Week pass ',
       description:
-        'The monthly subscription give you unlimited trips on the metro for 30 Days',
+        '',
       image: '',
       price: 1.99,
       quantity: 500
     },
     {
-      name: 'Yearly subscription',
-      category: categories[1]._id,
+      name: ' One month pass',
       description:
-        'The Yearly subscription give you unlimited trips on the metro for 12 monthes',
+        '',
       image: '',
       price: 7.99,
       quantity: 20
