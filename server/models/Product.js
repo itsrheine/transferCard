@@ -23,7 +23,16 @@ const productSchema = new Schema({
     type: Number,
     min: 0,
     default: 0
+<<<<<<< HEAD
   }
+=======
+  },
+  // category: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Category',
+  //   required: true
+  // }
+>>>>>>> cec27552f1eda7c7ff889335f34d98b2892c54a1
 });
 
 const Product = mongoose.model('Product', productSchema);
