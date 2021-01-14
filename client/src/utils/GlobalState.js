@@ -8,7 +8,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useProductReducer({ 
         products: [],
         wallet: [],
-        cwalletOpen: false
+        walletOpen: false
     });
     console.log(state);
     return <Provider value={[state, dispatch]} {...props} />;
