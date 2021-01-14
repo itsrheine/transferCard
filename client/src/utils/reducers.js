@@ -2,11 +2,9 @@ import { useReducer } from 'react';
 
 import {
     UPDATE_PRODUCTS,
-    UPDATE_CATEGORIES,
-    UPDATE_CURRENT_CATEGORY,
     ADD_TO_WALLET,
     ADD_MULTIPLE_TO_WALLET,
-    REMOVE_FROM_WALLET,
+    // REMOVE_FROM_WALLET,
     UPDATE_WALLET_QUANTITY,
     CLEAR_WALLET,
     TOGGLE_WALLET
@@ -19,16 +17,6 @@ export const reducer = (state, action) => {
                 ...state,
                 products: [...action.products],
             };
-        case UPDATE_CATEGORIES:
-            return {
-                ...state,
-                categories: [...action.categories]
-            };
-        case UPDATE_CURRENT_CATEGORY:
-            return {
-                ...state,
-                currentCategory: action.currentCategory
-            };
         case ADD_TO_WALLET:
             return {
                 ...state,
@@ -40,16 +28,16 @@ export const reducer = (state, action) => {
                 ...state,
                 wallet: [...state.wallet, ...action.products],
             };
-        case REMOVE_FROM_WALLET:
-            let newState = state.wallet.filter(product => {
-                return product._id !== action._id;
-            });
+        // case REMOVE_FROM_WALLET:
+        //     let newState = state.wallet.filter(product => {
+        //         return product._id !== action._id;
+        //     });
 
-            return {
-                ...state,
-                walletOpen: newState.length > 0,
-                wallet: newState
-            };
+        //     return {
+        //         ...state,
+        //         walletOpen: newState.length > 0,
+        //         wallet: newState
+        //     };
         case UPDATE_WALLET_QUANTITY:
             return {
                 ...state,
