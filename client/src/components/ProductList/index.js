@@ -11,8 +11,6 @@ import { idbPromise } from "../../utils/helpers";
 function ProductList() {
   const [state, dispatch] = useStoreContext();
 
-const { currentCategory } = state;
-
 const { loading, data } = useQuery(QUERY_PRODUCTS);
 
 useEffect(() => {
@@ -34,14 +32,6 @@ useEffect(() => {
     });
   }
 }, [data, loading, dispatch]);
-
-function filterProducts() {
-  if (!currentCategory) {
-    return state.products;
-  }
-
-  return state.products.filter(product => product.category._id === currentCategory);
-}
 
   return (
     <div className="my-2">
