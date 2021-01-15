@@ -1,17 +1,30 @@
 import React from 'react';
+<<<<<<< HEAD
 import { useStoreContext } from '../../utils/GlobalState';
 import { REMOVE_FROM_WALLET, UPDATE_WALLET_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
 const Card = ({ item }) => {
     const [, dispatch] = useStoreContext();
+=======
+import { useDispatch } from "react-redux";
+import { REMOVE_FROM_WALLET, UPDATE_WALLET } from '../../utils/actions';
+import { idbPromise } from '../../utils/helpers';
+
+const Card = ({ item }) => {
+    const dispatch = useDispatch();
+>>>>>>> develop
 
     const removeFromWallet = item => {
         dispatch({
             type: REMOVE_FROM_WALLET,
             _id: item._id
         });
+<<<<<<< HEAD
         idbPromise('wallet', 'delete', { ...item });
+=======
+        idbPromise('card', 'delete', { ...item });
+>>>>>>> develop
     };
     const onChange = (e) => {
         const value = e.target.value;
