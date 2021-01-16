@@ -2,48 +2,27 @@ const db = require('./connection');
 const { User, Product } = require('../models');
 
 db.once('open', async () => {
-<<<<<<< HEAD
-=======
-
->>>>>>> cec27552f1eda7c7ff889335f34d98b2892c54a1
   await Product.deleteMany();
 
   const products = await Product.insertMany([
 
     {
       name: 'One day pass',
-<<<<<<< HEAD
-      description:
-        '',
-=======
       description: '',
->>>>>>> cec27552f1eda7c7ff889335f34d98b2892c54a1
       image: '',
       price: 2.99,
       quantity: 500
     },
     {
-<<<<<<< HEAD
-      name: ' One Week pass ',
-      description:
-        '',
-=======
       name: 'One Week pass',
       description: '',
->>>>>>> cec27552f1eda7c7ff889335f34d98b2892c54a1
       image: '',
       price: 1.99,
       quantity: 500
     },
     {
-<<<<<<< HEAD
-      name: ' One month pass',
-      description:
-        '',
-=======
       name: 'One month pass',
       description: '',
->>>>>>> cec27552f1eda7c7ff889335f34d98b2892c54a1
       image: '',
       price: 7.99,
       quantity: 20
