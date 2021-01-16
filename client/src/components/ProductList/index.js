@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useQuery } from '@apollo/react-hooks';
 
-import ProductItem from "../ProductItem";
+// import ProductItem from "../ProductItem";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif"
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -39,7 +39,7 @@ useEffect(() => {
       <h2>Our Products:</h2>
       {state.products.length ? (
         <div className="flex-row">
-            {filterProducts().map(product => (
+            {/* {filterProducts().map(product => (
                 <ProductItem
                   key= {product._id}
                   _id={product._id}
@@ -48,7 +48,7 @@ useEffect(() => {
                   price={product.price}
                   quantity={product.quantity}
                 />
-            ))}
+            ))} */}
         </div>
       ) : (
         <h3>You haven't added any products yet!</h3>

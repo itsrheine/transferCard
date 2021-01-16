@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+// import { useReducer } from 'react';
 
 import {
     UPDATE_PRODUCTS,
@@ -9,7 +9,17 @@ import {
     TOGGLE_WALLET
   } from './actions';
 
-export const reducer = (state, action) => {
+  
+const initialState = {
+    products: [],
+    cart: [],
+    cartOpen: false,
+    categories: [],
+    currentCategory: ''
+}
+export const reducers = (state = initialState, action) => {
+  
+  
     switch (action.type) {
         case UPDATE_PRODUCTS:
             return {
@@ -25,6 +35,7 @@ export const reducer = (state, action) => {
         case ADD_MULTIPLE_TO_WALLET:
             return {
                 ...state,
+<<<<<<< HEAD
                 wallet: [...state.wallet, ...action.products],
             };
         // case REMOVE_FROM_WALLET:
@@ -37,6 +48,20 @@ export const reducer = (state, action) => {
         //         walletOpen: newState.length > 0,
         //         wallet: newState
         //     };
+=======
+                WALLET: [...state.wallet, ...action.products],
+            };
+        case REMOVE_FROM_WALLET:
+            let newState = state.wallet.filter(product => {
+                return product._id !== action._id;
+            });
+
+            return {
+                ...state,
+                walletOpen: newState.length > 0,
+                wallet: newState
+            };
+>>>>>>> develop
         case UPDATE_WALLET_QUANTITY:
             return {
                 ...state,
@@ -57,13 +82,15 @@ export const reducer = (state, action) => {
         case TOGGLE_WALLET:
             return {
                 ...state,
+<<<<<<< HEAD
                 walletOpen: !state.walletOpen
+=======
+                walletOpen: !state.WALLETOpen
+>>>>>>> develop
             };
         default: 
             return state;
     }
 };
 
-export function useProductReducer(initialState) {
-    return useReducer(reducer, initialState);
-}
+export default reducers;

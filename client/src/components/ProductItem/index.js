@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers";
+<<<<<<< HEAD
 import { useStoreContext } from '../../utils/GlobalState';
+=======
+>>>>>>> develop
 import { ADD_TO_WALLET, UPDATE_WALLET_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import { useDispatch, useSelector } from "react-redux";

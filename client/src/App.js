@@ -2,14 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-
+import Routes from './pages/Routes'
 import Home from "./pages/Home";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
+<<<<<<< HEAD
 import Routes from "./pages/Routes";
+=======
+>>>>>>> develop
 import Nav from "./components/Nav";
 import Success from "./pages/Success";
-import { StoreProvider } from "./utils/GlobalState";
+import { Provider } from "react-redux";
+import store from "./utils/store"
 import OrderHistory from "./pages/OrderHistory";
 
 const client = new ApolloClient({
@@ -29,17 +32,17 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
+          <Provider store={store}>
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/routes" component={Routes} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
-              <Route exact path="/products/:id" component={Detail} />
+              <Route exact path="/routes" component={Routes} />
               <Route component={NoMatch} />
             </Switch>
-          </StoreProvider>
+          </Provider>
         </div>
       </Router>
     </ApolloProvider>
