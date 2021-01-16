@@ -1,35 +1,35 @@
 import React from 'react';
-import { useStoreContext } from '../../utils/GlobalState';
-import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import { useDispatch } from "react-redux";
+import { REMOVE_FROM_WALLET, UPDATE_WALLET } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
-const CartItem = ({ item }) => {
-    const [, dispatch] = useStoreContext();
+const Card = ({ item }) => {
+    const dispatch = useDispatch();
 
-    const removeFromCart = item => {
+    const removeFromWallet = item => {
         dispatch({
-            type: REMOVE_FROM_CART,
+            type: REMOVE_FROM_WALLET,
             _id: item._id
         });
-        idbPromise('cart', 'delete', { ...item });
+        idbPromise('card', 'delete', { ...item });
     };
     const onChange = (e) => {
         const value = e.target.value;
       
         if (value === '0') {
           dispatch({
-            type: REMOVE_FROM_CART,
+            type: REMOVE_FROM_WALLET,
             _id: item._id
           });
 
-          idbPromise('cart', 'delete', { ...item });
+          idbPromise('card', 'delete', { ...item });
         } else {
           dispatch({
-            type: UPDATE_CART_QUANTITY,
+            type: UPDATE_WALLET,
             _id: item._id,
             purchaseQuantity: parseInt(value)
           });
-          idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
+          idbPromise('card', 'put', { ...item, purchaseQuantity: parseInt(value) });
         }
       };
 
@@ -54,7 +54,7 @@ const CartItem = ({ item }) => {
                     <span
                         role="img"
                         aria-label="trash"
-                        onClick={() => removeFromCart(item)}
+                        onClick={() => removeFromWallet(item)}
                     >
                         🗑️
                     </span>
@@ -64,4 +64,4 @@ const CartItem = ({ item }) => {
     );
 }
 
-export default CartItem;
+export default Card;
