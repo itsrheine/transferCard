@@ -11,7 +11,6 @@ class Routes extends React.Component {
     name: '',
     direction: '',
     num_stns: '',
-    station: ''
   }
 
   handleChange = (event) => {
@@ -20,14 +19,14 @@ class Routes extends React.Component {
       .then(response => response.json())
       .then(response => {
         let { name, direction, num_stns } = response.root.routes.route;
-        let  station  = JSON.stringify(response.root.routes.route.config.station)
-        .replace(/"/g, " ")
-        .replace(/[\[\]']+/g, " ")
-        .replace(/,/g, " ")
-        console.log(station)
+        // let  station  = JSON.stringify(response.root.routes.route.config.station)
+        // .replace(/"/g, " ")
+        // .replace(/[\[\]']+/g, " ")
+        // .replace(/,/g, " ")
+        // console.log(station)
 
         this.setState({
-          name, direction, num_stns, station
+          name, direction, num_stns
         })
 
         // using useState()
@@ -37,7 +36,7 @@ class Routes extends React.Component {
   }
 
   render() {
-    const { name, direction, num_stns, station } = this.state;
+    const { name, direction, num_stns } = this.state;
     console.log(station)
 
     return (
@@ -64,10 +63,7 @@ class Routes extends React.Component {
               <p>{name}</p>
               <p>{direction}</p>
               <p>{num_stns}</p>
-              <ul>
 
-                <li className="bullet">{station}</li>
-              </ul>
               
             </div>
           </div>
