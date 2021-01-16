@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+// import { useReducer } from 'react';
 
 import {
     UPDATE_PRODUCTS,
@@ -10,7 +10,17 @@ import {
     TOGGLE_WALLET
   } from './actions';
 
-export const reducer = (state, action) => {
+  
+const initialState = {
+    products: [],
+    cart: [],
+    cartOpen: false,
+    categories: [],
+    currentCategory: ''
+}
+export const reducers = (state = initialState, action) => {
+  
+  
     switch (action.type) {
         case UPDATE_PRODUCTS:
             return {
@@ -20,29 +30,29 @@ export const reducer = (state, action) => {
         case ADD_TO_WALLET:
             return {
                 ...state,
-                WALLETOpen: true,
-                WALLET: [...state.WALLET, action.product]
+                walletOpen: true,
+                wallet: [...state.wallet, action.product]
             };
         case ADD_MULTIPLE_TO_WALLET:
             return {
                 ...state,
-                WALLET: [...state.WALLET, ...action.products],
+                WALLET: [...state.wallet, ...action.products],
             };
         case REMOVE_FROM_WALLET:
-            let newState = state.WALLET.filter(product => {
+            let newState = state.wallet.filter(product => {
                 return product._id !== action._id;
             });
 
             return {
                 ...state,
-                WALLETOpen: newState.length > 0,
-                WALLET: newState
+                walletOpen: newState.length > 0,
+                wallet: newState
             };
         case UPDATE_WALLET_QUANTITY:
             return {
                 ...state,
-                WALLETOpen: true,
-                WALLET: state.WALLET.map(product => {
+                walletOpen: true,
+                wallet: state.wallet.map(product => {
                     if (action._id === product._id) {
                         product.purchaseQuantity = action.purchaseQuantity;
                     }
@@ -52,19 +62,17 @@ export const reducer = (state, action) => {
         case CLEAR_WALLET:
             return {
                 ...state,
-                WALLETOpen: false,
-                WALLET: []
+                walletOpen: false,
+                wallet: []
             };
         case TOGGLE_WALLET:
             return {
                 ...state,
-                WALLETOpen: !state.WALLETOpen
+                walletOpen: !state.WALLETOpen
             };
         default: 
             return state;
     }
 };
 
-export function useProductReducer(initialState) {
-    return useReducer(reducer, initialState);
-}
+export default reducers;
