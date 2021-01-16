@@ -6,7 +6,8 @@ import {
     ADD_MULTIPLE_TO_WALLET,
     UPDATE_WALLET_QUANTITY,
     CLEAR_WALLET,
-    TOGGLE_WALLET
+    TOGGLE_WALLET,
+    REMOVE_FROM_WALLET
   } from './actions';
 
   
@@ -18,7 +19,6 @@ const initialState = {
     currentCategory: ''
 }
 export const reducers = (state = initialState, action) => {
-  
   
     switch (action.type) {
         case UPDATE_PRODUCTS:
