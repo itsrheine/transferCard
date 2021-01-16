@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Wallet from '../Wallet';
 import Auth from '../../utils/auth';
 
 import { useStoreContext } from '../../utils/GlobalState';

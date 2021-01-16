@@ -35,20 +35,6 @@ export const reducers = (state = initialState, action) => {
         case ADD_MULTIPLE_TO_WALLET:
             return {
                 ...state,
-<<<<<<< HEAD
-                wallet: [...state.wallet, ...action.products],
-            };
-        // case REMOVE_FROM_WALLET:
-        //     let newState = state.wallet.filter(product => {
-        //         return product._id !== action._id;
-        //     });
-
-        //     return {
-        //         ...state,
-        //         walletOpen: newState.length > 0,
-        //         wallet: newState
-        //     };
-=======
                 WALLET: [...state.wallet, ...action.products],
             };
         case REMOVE_FROM_WALLET:
@@ -61,7 +47,6 @@ export const reducers = (state = initialState, action) => {
                 walletOpen: newState.length > 0,
                 wallet: newState
             };
->>>>>>> develop
         case UPDATE_WALLET_QUANTITY:
             return {
                 ...state,
@@ -82,11 +67,7 @@ export const reducers = (state = initialState, action) => {
         case TOGGLE_WALLET:
             return {
                 ...state,
-<<<<<<< HEAD
-                walletOpen: !state.walletOpen
-=======
                 walletOpen: !state.WALLETOpen
->>>>>>> develop
             };
         default: 
             return state;
