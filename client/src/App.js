@@ -5,10 +5,6 @@ import ApolloClient from 'apollo-boost';
 import Routes from './pages/Routes'
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
-<<<<<<< HEAD
-import Routes from "./pages/Routes";
-=======
->>>>>>> develop
 import Nav from "./components/Nav";
 import Success from "./pages/Success";
 import { Provider } from "react-redux";
