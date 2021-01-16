@@ -37,11 +37,11 @@ class Routes extends React.Component {
 
   render() {
     const { name, direction, num_stns } = this.state;
-    console.log(station)
+
 
     return (
     <div className="container-map">
-            <div><img src={BARTmap}/></div>
+            <div><img src={BARTmap} alt="map"/></div>
       <div className="row container">
         <div className="input-field col s12">
           <select onChange={this.handleChange}>
