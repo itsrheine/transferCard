@@ -13,8 +13,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   min-height: 100%;
 }
 
@@ -28,12 +27,7 @@ body {
   color: var(--dark);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
@@ -201,6 +195,25 @@ input:focus {
 
 .error-text {
   color: var(--error);
+}
+
+img {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.container-map {
+  position: relative;
+  display: flex;
+  /* padding-right: 5%; */
+}
+
+.bullet {
+  list-style-type: none;
+  white-space: pre-line;
+  vertical-align: bottom;
 }
 
 @media screen and (max-width: 768px) {
