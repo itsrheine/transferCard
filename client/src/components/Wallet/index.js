@@ -26,7 +26,7 @@ const Wallet = () => {
       }, [data]);
 
     useEffect(() => {
-        async function getCart() {
+        async function getWallet() {
             const cart = await idbPromise('cart', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...cart] });
         };
@@ -36,7 +36,7 @@ const Wallet = () => {
         }
     }, [state.cart.length, dispatch]);
 
-    function toggleCart() {
+    function toggleWallet() {
         dispatch({ type: TOGGLE_WALLET });
     }
 
@@ -71,7 +71,7 @@ const Wallet = () => {
     }
     return (
         <div className="cart">
-            <div className="close" onClick={toggleCart}>[close]</div>
+            <div className="close" onClick={toggleWallet}>[close]</div>
             <h2>Shopping Cart</h2>
             {state.cart.length ? (
                 <div>
@@ -103,4 +103,4 @@ const Wallet = () => {
     );
 };
 
-export default Cart;
+export default Wallet;
