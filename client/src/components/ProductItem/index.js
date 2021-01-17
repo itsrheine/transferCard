@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import { ADD_TO_WALLET, UPDATE_WALLET_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import { useDispatch, useSelector } from "react-redux";
 
@@ -17,27 +17,27 @@ function ProductItem(item) {
   const dispatch = useDispatch();
   const state = useSelector(state => state);
 
-  const { cart } = state;
+  const { wallet } = state;
   
-  const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id );
+  const addToWallet = () => {
+    const itemInWallet = wallet.find((walletItem) => walletItem._id === _id );
     
-    if (itemInCart) {
+    if (itemInWallet) {
       dispatch({
-        type: UPDATE_CART_QUANTITY,
+        type: UPDATE_WALLET_QUANTITY,
         _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInWallet.purchaseQuantity) + 1
       });
-      idbPromise('cart', 'put', {
-        ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      idbPromise('wallet', 'put', {
+        ...itemInWallet,
+        purchaseQuantity: parseInt(itemInWallet.purchaseQuantity) + 1
       })
     } else {
       dispatch({
-        type: ADD_TO_CART,
+        type: ADD_TO_WALLET,
         product: { ...item, purchaseQuantity: 1 }
       });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1});
+      idbPromise('wallet', 'put', { ...item, purchaseQuantity: 1});
     }
   };
   
@@ -54,7 +54,7 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToWallet}>Add to wallet</button>
     </div>
   );
 }

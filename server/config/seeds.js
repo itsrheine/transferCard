@@ -2,7 +2,6 @@ const db = require('./connection');
 const { User, Product } = require('../models');
 
 db.once('open', async () => {
-
   await Product.deleteMany();
 
   const products = await Product.insertMany([

@@ -27,14 +27,19 @@ const Wallet = () => {
 
     useEffect(() => {
         async function getWallet() {
+<<<<<<< HEAD
             const cart = await idbPromise('cart', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...cart] });
+=======
+            const wallet = await idbPromise('wallet', 'get');
+            dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...wallet] });
+>>>>>>> develop
         };
 
-        if (!state.cart.length) {
-            getCart();
+        if (!state.wallet.length) {
+            getWallet();
         }
-    }, [state.cart.length, dispatch]);
+    }, [state.wallet.length, dispatch]);
 
     function toggleWallet() {
         dispatch({ type: TOGGLE_WALLET });
@@ -42,7 +47,7 @@ const Wallet = () => {
 
     function calculateTotal() {
         let sum = 0;
-        state.cart.forEach(item => {
+        state.wallet.forEach(item => {
             sum += item.price * item.purchaseQuantity;
         });
         return sum.toFixed(2);
@@ -53,16 +58,16 @@ const Wallet = () => {
         getCheckout({
             variables: { products: productIds }
         });
-        state.cart.forEach((item) => {
+        state.wallet.forEach((item) => {
             for (let i = 0; i < item.purchaseQuantity; i++) {
                 productIds.push(item._id);
             }
         });
     }
 
-    if (!state.cartOpen) {
+    if (!state.walletOpen) {
         return (
-            <div className="cart-closed" onClick={toggleCart}>
+            <div className="wallet-closed" onClick={toggleWallet}>
                 <span
                     role="img"
                     aria-label="trash">🛒</span>
@@ -70,12 +75,19 @@ const Wallet = () => {
         );
     }
     return (
+<<<<<<< HEAD
         <div className="cart">
             <div className="close" onClick={toggleWallet}>[close]</div>
             <h2>Shopping Cart</h2>
             {state.cart.length ? (
+=======
+        <div className="wallet">
+            <div className="close" onClick={toggleWallet}>[close]</div>
+            <h2>Wallet</h2>
+            {state.wallet.length ? (
+>>>>>>> develop
                 <div>
-                    {state.cart.map(item => (
+                    {state.wallet.map(item => (
                         <Card key={item._id} item={item} />
                     ))}
                     <div className="flex-row space-between">
@@ -95,7 +107,7 @@ const Wallet = () => {
                         <span role="img" aria-label="shocked">
                             😱
                         </span>
-                        You haven't added anything to your cart yet!
+                        You haven't added anything to your wallet yet!
                     </h3>
                 )}
         </div>
