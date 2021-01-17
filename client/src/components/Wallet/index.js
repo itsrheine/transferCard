@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Auth from '../../utils/auth';
-
 import { TOGGLE_WALLET, ADD_MULTIPLE_TO_WALLET } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -28,11 +27,13 @@ const Wallet = () => {
         async function getWallet() {
             const wallet = await idbPromise('wallet', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...wallet] });
+            console.log(wallet);
         };
 
         if (!state.wallet.length) {
             getWallet();
         }
+
     }, [state.wallet.length, dispatch]);
 
     function toggleWallet() {
