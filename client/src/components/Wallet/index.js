@@ -75,7 +75,7 @@ const Wallet = () => {
             {state.wallet.length ? (
                 <div>
                     {state.wallet.map(item => (
-                        <WalletItem key={item._id} item={item} />
+                        <Card key={item._id} item={item} />
                     ))}
                     <div className="flex-row space-between">
                         <strong>Total: ${calculateTotal()}</strong>
