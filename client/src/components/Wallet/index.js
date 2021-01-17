@@ -27,13 +27,8 @@ const Wallet = () => {
 
     useEffect(() => {
         async function getWallet() {
-<<<<<<< HEAD
-            const cart = await idbPromise('cart', 'get');
-            dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...cart] });
-=======
             const wallet = await idbPromise('wallet', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_WALLET, products: [...wallet] });
->>>>>>> develop
         };
 
         if (!state.wallet.length) {
@@ -75,17 +70,10 @@ const Wallet = () => {
         );
     }
     return (
-<<<<<<< HEAD
-        <div className="cart">
-            <div className="close" onClick={toggleWallet}>[close]</div>
-            <h2>Shopping Cart</h2>
-            {state.cart.length ? (
-=======
         <div className="wallet">
             <div className="close" onClick={toggleWallet}>[close]</div>
             <h2>Wallet</h2>
             {state.wallet.length ? (
->>>>>>> develop
                 <div>
                     {state.wallet.map(item => (
                         <Card key={item._id} item={item} />
