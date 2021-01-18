@@ -18,7 +18,7 @@ db.once('open', async () => {
       description: 'Full day pass allow you to use the train all day',
       image: '1daypass.jpg',
       category: categories[0]._id,
-      price: 2.99,
+      price: 10.00,
       quantity: 500
     },
     {
@@ -26,7 +26,7 @@ db.once('open', async () => {
       description: 'One month pass allow you to use the train for 7 days ',
       image: '1weekpass.jpg',
       category: categories[0]._id,
-      price: 1.99,
+      price: 40.00,
       quantity: 500
     },
     {
@@ -34,8 +34,8 @@ db.once('open', async () => {
       category: categories[0]._id,
       description: 'One month pass allow you to use the train for 30 days ',
       image: '1monthpass.jpg',
-      price: 7.99,
-      quantity: 20
+      price: 100.00,
+      quantity: 500
     }
   ]);
 
