@@ -6,7 +6,7 @@ import ApolloClient from 'apollo-boost';
 // import Detail from "./pages/Detail";
 import Routes from "./pages/Routes";
 // import NoMatch from "./pages/NoMatch";
-import About from "./pages/About";
+import Faq from "./pages/faq";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
@@ -34,7 +34,7 @@ function App() {
           <Provider store={store}>
             <Nav />
             <Switch>
-              <Route exact path="/about" component={About} />
+              <Route exact path="/faq" component={Faq} />
               <Route exact path="/store" component={Tickets} />
               <Route exact path="/routes" component={Routes} />
               <Route exact path="/profile" component={Profile} />
