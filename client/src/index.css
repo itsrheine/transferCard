@@ -1,7 +1,7 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #00000093;
+  --secondary: #ffa600;
+  --tertiary: #1fa5da;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -13,22 +13,34 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: "Gill Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+
+  background-image: url("assets/BART.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rubik', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gill Sans", sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -195,25 +207,6 @@ input:focus {
 
 .error-text {
   color: var(--error);
-}
-
-img {
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-}
-
-.container-map {
-  position: relative;
-  display: flex;
-  /* padding-right: 5%; */
-}
-
-.bullet {
-  list-style-type: none;
-  white-space: pre-line;
-  vertical-align: bottom;
 }
 
 @media screen and (max-width: 768px) {

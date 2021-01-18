@@ -1,76 +1,93 @@
-// import { useReducer } from 'react';
-
 import {
     UPDATE_PRODUCTS,
-    ADD_TO_WALLET,
-    ADD_MULTIPLE_TO_WALLET,
-    REMOVE_FROM_WALLET,
-    UPDATE_WALLET_QUANTITY,
-    CLEAR_WALLET,
-    TOGGLE_WALLET
-  } from './actions';
+    UPDATE_CATEGORIES,
+    UPDATE_CURRENT_CATEGORY,
+    ADD_TO_CART,
+    ADD_MULTIPLE_TO_CART,
+    REMOVE_FROM_CART,
+    UPDATE_CART_QUANTITY,
+    CLEAR_CART,
+    TOGGLE_CART
+} from './actions';
 
-  
+// add the initial state here
 const initialState = {
     products: [],
     cart: [],
     cartOpen: false,
-    categories: [],
-    currentCategory: ''
+    categories:[],
+    currentCategory: '',
 }
+
 export const reducers = (state = initialState, action) => {
-  
-  
     switch (action.type) {
+        // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
         case UPDATE_PRODUCTS:
             return {
                 ...state,
-                products: [...action.products],
+                products: [...action.products]
             };
-        case ADD_TO_WALLET:
+        // if action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
+        case UPDATE_CATEGORIES:
             return {
                 ...state,
-                walletOpen: true,
-                wallet: [...state.wallet, action.product]
+                categories: [...action.categories]
             };
-        case ADD_MULTIPLE_TO_WALLET:
+        case UPDATE_CURRENT_CATEGORY:
             return {
                 ...state,
-                WALLET: [...state.wallet, ...action.products],
+                currentCategory: action.currentCategory
             };
-        case REMOVE_FROM_WALLET:
-            let newState = state.wallet.filter(product => {
+        case ADD_TO_CART:
+            return {
+                ...state,
+                cartOpen: true,
+                cart: [...state.cart, action.product]
+            };
+
+        case ADD_MULTIPLE_TO_CART:
+            return {
+                ...state,
+                cart: [...state.cart, ...action.products],
+            };
+
+        case REMOVE_FROM_CART:
+            let newState = state.cart.filter(product => {
                 return product._id !== action._id;
             });
 
             return {
                 ...state,
-                walletOpen: newState.length > 0,
-                wallet: newState
+                cartOpen: newState.length > 0,
+                cart: newState
             };
-        case UPDATE_WALLET_QUANTITY:
+
+        case UPDATE_CART_QUANTITY:
             return {
                 ...state,
-                walletOpen: true,
-                wallet: state.wallet.map(product => {
-                    if (action._id === product._id) {
-                        product.purchaseQuantity = action.purchaseQuantity;
-                    }
-                    return product;
+                cartOpen: true,
+                cart: state.cart.map(product => {
+                if (action._id === product._id) {
+                    product.purchaseQuantity = action.purchaseQuantity;
+                }
+                return product;
                 })
             };
-        case CLEAR_WALLET:
+
+        case CLEAR_CART:
             return {
                 ...state,
-                walletOpen: false,
-                wallet: []
+                cartOpen: false,
+                cart: []
             };
-        case TOGGLE_WALLET:
+
+        case TOGGLE_CART:
             return {
-                ...state,
-                walletOpen: !state.WALLETOpen
+            ...state,
+            cartOpen: !state.cartOpen
             };
-        default: 
+
+        default:
             return state;
     }
 };

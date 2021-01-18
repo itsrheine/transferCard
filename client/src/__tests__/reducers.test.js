@@ -1,32 +1,35 @@
-// import our actions
+import { reducer } from '../utils/reducers';
 import {
     UPDATE_PRODUCTS,
-    ADD_TO_WALLET,
-    ADD_MULTIPLE_TO_WALLET,
-    REMOVE_FROM_WALLET,
-    UPDATE_WALLET_QUANTITY,
-    CLEAR_WALLET,
-    TOGGLE_WALLET
+    UPDATE_CATEGORIES,
+    UPDATE_CURRENT_CATEGORY,
+    ADD_TO_CART,
+    ADD_MULTIPLE_TO_CART,
+    REMOVE_FROM_CART,
+    UPDATE_CART_QUANTITY,
+    CLEAR_CART,
+    TOGGLE_CART
 } from '../utils/actions';
 
-import { reducer } from '../utils/reducers';
 
 // create a sample of what our global state will look like
 const initialState = {
     products: [],
-    WALLET: [
+    categories: [{ name: 'Food' }],
+    currentCategory: '1',
+    cart: [
         {
             _id: '1',
-            name: 'One day pass',
+            name: 'Soup',
             purchaseQuantity: 1
         },
         {
             _id: '2',
-            name: 'One Week pass',
+            name: 'Bread',
             purchaseQuantity: 2
         }
     ],
-    WALLETOpen: false
+    cartOpen: false
 };
 
 test('UPDATE_PRODUCTS', () => {
@@ -36,90 +39,109 @@ test('UPDATE_PRODUCTS', () => {
     });
 
     expect(newState.products.length).toBe(2);
-    expect(initialState.products.length).toBe(0)
-})
+    expect(initialState.products.length).toBe(0);
+});
 
-
-test('ADD_TO_WALLET', () => {
+test('UPDATE_CATEGORIES', () => {
     let newState = reducer(initialState, {
-        type: ADD_TO_WALLET,
+        type: UPDATE_CATEGORIES,
+        categories: [{}, {}]
+    });
+
+    expect(newState.categories.length).toBe(2);
+    expect(initialState.categories.length).toBe(1);
+});
+
+test('UPDATE_CURRENT_CATEGORY', () => {
+    let newState = reducer(initialState, {
+        type: UPDATE_CURRENT_CATEGORY,
+        currentCategory: '2'
+    });
+
+    expect(newState.currentCategory).toBe('2');
+    expect(initialState.currentCategory).toBe('1');
+});
+
+test('ADD_TO_CART', () => {
+    let newState = reducer(initialState, {
+        type: ADD_TO_CART,
         product: { purchaseQuantity: 1 }
     });
 
-    expect(newState.WALLET.length).toBe(3);
-    expect(initialState.WALLET.length).toBe(2);
+    expect(newState.cart.length).toBe(3);
+    expect(initialState.cart.length).toBe(2);
 });
 
-test('ADD_MULTIPLE_TO_WALLET', () => {
+test('ADD_MULTIPLE_TO_CART', () => {
     let newState = reducer(initialState, {
-        type: ADD_MULTIPLE_TO_WALLET,
+        type: ADD_MULTIPLE_TO_CART,
         products: [{}, {}]
     });
 
-    expect(newState.WALLET.length).toBe(4);
-    expect(initialState.WALLET.length).toBe(2);
+    expect(newState.cart.length).toBe(4);
+    expect(initialState.cart.length).toBe(2);
 });
 
-test('REMOVE_FROM_WALLET', () => {
+test('REMOVE_FROM_CART', () => {
     let newState1 = reducer(initialState, {
-        type: REMOVE_FROM_WALLET,
+        type: REMOVE_FROM_CART,
         _id: '1'
     });
 
-    // WALLET is still open
-    expect(newState1.WALLETOpen).toBe(true);
+    // cart is still open
+    expect(newState1.cartOpen).toBe(true);
 
     // the second item should now be the first
-    expect(newState1.WALLET.length).toBe(1);
-    expect(newState1.WALLET[0]._id).toBe('2');
+    expect(newState1.cart.length).toBe(1);
+    expect(newState1.cart[0]._id).toBe('2');
 
     let newState2 = reducer(newState1, {
-        type: REMOVE_FROM_WALLET,
+        type: REMOVE_FROM_CART,
         _id: '2'
     });
 
-    // WALLET is empty and closed
-    expect(newState2.WALLETOpen).toBe(false);
-    expect(newState2.WALLET.length).toBe(0);
+    // cart is empty and closed
+    expect(newState2.cartOpen).toBe(false);
+    expect(newState2.cart.length).toBe(0);
 
-    expect(initialState.WALLET.length).toBe(2);
+    expect(initialState.cart.length).toBe(2);
 });
 
-test('UPDATE_WALLET_QUANTITY', () => {
+test('UPDATE_CART_QUANTITY', () => {
     let newState = reducer(initialState, {
-        type: UPDATE_WALLET_QUANTITY,
+        type: UPDATE_CART_QUANTITY,
         _id: '1',
         purchaseQuantity: 3
     });
 
-    expect(newState.WALLETOpen).toBe(true);
-    expect(newState.WALLET[0].purchaseQuantity).toBe(3);
-    expect(newState.WALLET[1].purchaseQuantity).toBe(2);
+    expect(newState.cartOpen).toBe(true);
+    expect(newState.cart[0].purchaseQuantity).toBe(3);
+    expect(newState.cart[1].purchaseQuantity).toBe(2);
 
-    expect(initialState.WALLETOpen).toBe(false);
+    expect(initialState.cartOpen).toBe(false);
 });
 
-test('CLEAR_WALLET', () => {
+test('CLEAR_CART', () => {
     let newState = reducer(initialState, {
-        type: CLEAR_WALLET
+        type: CLEAR_CART
     });
 
-    expect(newState.WALLETOpen).toBe(false);
-    expect(newState.WALLET.length).toBe(0);
-    expect(initialState.WALLET.length).toBe(2);
+    expect(newState.cartOpen).toBe(false);
+    expect(newState.cart.length).toBe(0);
+    expect(initialState.cart.length).toBe(2);
 });
 
-test('TOGGLE_WALLET', () => {
+test('TOGGLE_CART', () => {
     let newState = reducer(initialState, {
-        type: TOGGLE_WALLET
+      type: TOGGLE_CART
     });
-
-    expect(newState.WALLETOpen).toBe(true);
-    expect(initialState.WALLETOpen).toBe(false);
-
+  
+    expect(newState.cartOpen).toBe(true);
+    expect(initialState.cartOpen).toBe(false);
+  
     let newState2 = reducer(newState, {
-        type: TOGGLE_WALLET
+      type: TOGGLE_CART
     });
-
-    expect(newState2.WALLETOpen).toBe(false);
-});
+  
+    expect(newState2.cartOpen).toBe(false);
+  });

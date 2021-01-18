@@ -1,15 +1,24 @@
 import React from "react";
-import ProductList from "../components/ProductList";
-import Wallet from '../components/Wallet';
-
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import Cart from "../components/Cart";
+import { CardWrapper } from "../components/SignCard";
 
 const Home = () => {
+  const [show, setShow] = React.useState(false)
   return (
     <div className="container">
-    <ProductList />
-    <Wallet />
-  </div>
+      <CardWrapper>
+        {show ? (
+          <Signup />
+          ) : 
+          <Login />
+        } 
+        <button onClick={() => setShow(!show)}>{show ? "Login" : "Signup"}</button>
+      </CardWrapper>
+      <Cart />
+     
+    </div>
   );
 };
-
 export default Home;

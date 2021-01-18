@@ -1,29 +1,39 @@
 const db = require('./connection');
-const { User, Product } = require('../models');
+const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {
+  await Category.deleteMany();
+
+  const categories = await Category.insertMany([
+    { name: 'Tickets' }
+  ]);
+
+  console.log('categories seeded');
+
   await Product.deleteMany();
 
   const products = await Product.insertMany([
-
     {
-      name: 'One day pass',
-      description: '',
-      image: '',
+      name: 'One Day Pass',
+      description: 'Full day pass allow you to use the train all day',
+      image: '1daypass.jpg',
+      category: categories[0]._id,
       price: 2.99,
       quantity: 500
     },
     {
-      name: 'One Week pass',
-      description: '',
-      image: '',
+      name: 'One Week Pass',
+      description: 'One month pass allow you to use the train for 7 days ',
+      image: '1weekpass.jpg',
+      category: categories[0]._id,
       price: 1.99,
       quantity: 500
     },
     {
-      name: 'One month pass',
-      description: '',
-      image: '',
+      name: 'One Month Pass',
+      category: categories[0]._id,
+      description: 'One month pass allow you to use the train for 30 days ',
+      image: '1monthpass.jpg',
       price: 7.99,
       quantity: 20
     }

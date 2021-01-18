@@ -13,9 +13,6 @@ function OrderHistory() {
   }
 
   return (
-
-    // PROFILE WILL BE HERE AS WELL
-
     <>
       <div className="container my-1">
         <Link to="/">
