@@ -210,6 +210,15 @@ input:focus {
   color: var(--error);
 }
 
+.column {
+  float: left;
+  width: 100%;
+  margin: 25px 0px 0px;
+  padding: 25px;
+  background-color:#ddd;
+  opacity: 0.75;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
