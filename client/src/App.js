@@ -6,7 +6,7 @@ import ApolloClient from 'apollo-boost';
 // import Detail from "./pages/Detail";
 import Routes from "./pages/Routes";
 // import NoMatch from "./pages/NoMatch";
-import Faq from "./pages/faq";
+import Faq from "./pages/Faq";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
