@@ -5,7 +5,7 @@ import Cart from "../components/Cart";
 import { CardWrapper } from "../components/SignCard";
 
 const Home = () => {
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = React.useState(true)
   return (
     <div className="container">
       <CardWrapper>
@@ -16,7 +16,6 @@ const Home = () => {
         } 
         <button onClick={() => setShow(!show)}>{show ? "Login" : "Signup"}</button>
       </CardWrapper>
-      <Cart />
      
     </div>
   );
