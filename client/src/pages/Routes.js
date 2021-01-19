@@ -45,7 +45,7 @@ class Routes extends React.Component {
         <img className="bartmap" src={BARTmap} alt="map"/>
       </div>
           
-      <div className="container route-container">
+      <div className="container">
         <div className="custom-select">
           <select onChange={this.handleChange}>
             <option value="" disabled selected>Choose your route</option>
@@ -59,21 +59,18 @@ class Routes extends React.Component {
             <option value="8">MLBR-RICH</option>
           </select>
         </div>
-        
-        <div className="result-container">
-          <div className="row bg">
-            <div className="col-6 result">
-              <div className="route">
-                <h1>Route: </h1>
-                <h1>{name}</h1>
-              </div>
-              <div className="stations">
-                <h3>Direction: {direction}</h3>
-                <h3>Number of Stations: {num_stns}</h3>
-              </div>
+        <div className="row bg">
+          <div className="col-6 result">
+            <div>
+              <h1>Route: </h1>
+              <h1>{name}</h1>
+            </div>
+            <div className="stations">
+              <h3>Direction: {direction}</h3>
+              <h3>Number of Stations: {num_stns}</h3>
             </div>
           </div>
-        </div>
+        </div>       
       </div>
     </div>
     );
