@@ -241,3 +241,91 @@ input:focus {
     width: 100%;
   }
 }
+
+/*  proj 3/ transfercard route testing  */
+.bartmap {
+  display: block;
+  border: solid;
+  margin: 10%;
+  /* margin-right: 0; */
+  /* margin-left: 10%; */
+  margin-top: 30px;
+  width: 75%;
+}
+
+.container-map {
+  position: relative;
+  display: flex;
+}
+
+.route-container {
+  margin: 10px;
+}
+
+.result-container{
+  margin: auto;
+  padding: auto;
+}
+
+.result {
+  color: black;
+  margin: auto;
+  /* margin-top: 20px; */
+  padding-left: 5%;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  margin-top: 20px;
+  padding-bottom: 10%;
+}
+
+.stations {
+  margin-top: 10% ;
+  padding-top: 0;
+}
+
+.route {
+  margin-bottom: 0;
+}
+
+select {
+  font-size: 20px;
+  font-family: Arial;
+  color: white;
+  letter-spacing: .5em;
+  background-color: dodgerblue;
+  padding-left: 5px;   
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  padding: 10px; 
+  width: 320px;
+  text-indent: 27px;
+  font-family: Palatino Linotype;
+  font-size: 15px;
+  margin: 10px
+
+  /* position:absolute; top: 10%; left: 2%; */
+}
+
+option {
+  border: none;
+}
+
+label {
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.bg {
+  background-color: white;
+  opacity: 0.5;
+  /* margin: auto; */
+  /* margin-top: 30px; */
+  /* margin-right: 20px; */
+
+  padding: 0 0 30% 0;
+  width: 90%;
+}

@@ -23,7 +23,7 @@ class Routes extends React.Component {
         // .replace(/"/g, " ")
         // .replace(/[\[\]']+/g, " ")
         // .replace(/,/g, " ")
-        // console.log(station)
+        console.log(response)
 
         this.setState({
           name, direction, num_stns
@@ -34,18 +34,21 @@ class Routes extends React.Component {
 
       });
   }
-
+  
   render() {
     const { name, direction, num_stns } = this.state;
 
 
     return (
     <div className="container-map">
-            <div><img src={BARTmap} alt="map"/></div>
-      <div className="row container">
-        <div className="input-field col s12">
+      <div >
+        <img className="bartmap" src={BARTmap} alt="map"/>
+      </div>
+          
+      <div className="container route-container">
+        <div className="custom-select">
           <select onChange={this.handleChange}>
-            <option value="" disabled selected>Choose your option</option>
+            <option value="" disabled selected>Choose your route</option>
             <option value="1">ANTC-SFIA</option>
             <option value="2">SFIA-ANTC</option>
             <option value="3">BERY-RICH</option>
@@ -56,15 +59,18 @@ class Routes extends React.Component {
             <option value="8">MLBR-RICH</option>
           </select>
         </div>
-        <label>Materialize Select</label>
-        <div>
-          <div className="row">
-            <div className="col-6">
-              <p>{name}</p>
-              <p>{direction}</p>
-              <p>{num_stns}</p>
-
-              
+        
+        <div className="result-container">
+          <div className="row bg">
+            <div className="col-6 result">
+              <div className="route">
+                <h1>Route: </h1>
+                <h1>{name}</h1>
+              </div>
+              <div className="stations">
+                <h3>Direction: {direction}</h3>
+                <h3>Number of Stations: {num_stns}</h3>
+              </div>
             </div>
           </div>
         </div>
