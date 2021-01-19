@@ -6,24 +6,20 @@ const Profile = () => {
     <div className="container">
       <div class="row">
         <div class="column">
-          <h2>User Info</h2>
-          <p>Some text..</p>
+          <h3><button onclick={userInfo()}>User Info</button></h3>
+          <p id="demo"></p>
         </div>
         <div class="column">
-          <h2>Order History</h2>
-          <p>Some text..</p>
-        </div>
-        <div class="column">
-          <h2>Payment Method</h2>
-          <p>Some text..</p>
-        </div>
-        <div class="column">
-          <h2>Social Media</h2>
+          <h3>Order History</h3>
           <p>Some text..</p>
         </div>
       </div>
     </div>
   );
+
+  function userInfo() {
+    document.getElementById("demo").innerHTML = "Hello World";
+  }
 };
 
 export default Profile;
