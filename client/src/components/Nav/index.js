@@ -64,7 +64,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-        <img src={logoIcon} alt="logo" class="ticket-logo" />
+        <img src={logoIcon} alt="logo" class="ticket-logo" /> 
           TransferCard
         </Link>
       </h1>

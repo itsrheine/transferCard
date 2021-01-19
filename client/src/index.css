@@ -119,14 +119,14 @@ button {
   background-color: var(--secondary);
 }
 
-button:hover {
+/* button:hover {
   opacity: .8;
 }
 
 button[disabled] {
   cursor: default;
   opacity: .8;
-}
+} */
 
 img {
   max-width: 100%;
