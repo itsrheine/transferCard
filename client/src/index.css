@@ -254,6 +254,7 @@ input:focus {
 .container-map {
   position: relative;
   display: flex;
+  opacity: 0.8;
 }
 
 .result {
