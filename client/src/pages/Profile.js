@@ -1,5 +1,6 @@
 import React from "react";
 import UserInfo from "../components/UserInfo";
+import OrderHistory from "../components/OrderHistory";
 
 const Profile = () => {
 
@@ -13,7 +14,7 @@ const Profile = () => {
         </div>
         <div class="column">
           <h3>Order History</h3>
-          <p>Some text..</p>
+          <OrderHistory />
         </div>
       </div>
     </div>
