@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardHeading,
   CardBody,
-  CardFieldset,
   CardButton,
 } from "../components/SignCard";
 
@@ -42,22 +41,19 @@ function Signup(props) {
         </CardHeader>
         <CardBody>
           <form onSubmit={handleFormSubmit}>
-            <CardFieldset>
               <div className="flex-row space-between my-2">
-                <label htmlFor="firstName">First Name:</label>
+                {/* <label htmlFor="firstName">First Name:</label> */}
                 <input
-                  placeholder="First"
+                  placeholder="First Name"
                   name="firstName"
                   type="firstName"
                   id="firstName"
                   onChange={handleChange}
                 />
               </div>
-            </CardFieldset>
             <div className="flex-row space-between my-2">
-              <label htmlFor="lastName">Last Name:</label>
               <input
-                placeholder="Last"
+                placeholder="Last Name"
                 name="lastName"
                 type="lastName"
                 id="lastName"
@@ -65,7 +61,6 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row space-between my-2">
-              <label htmlFor="email">Email:</label>
               <input
                 placeholder="youremail@test.com"
                 name="email"
@@ -75,9 +70,8 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row space-between my-2">
-              <label htmlFor="pwd">Password:</label>
               <input
-                placeholder="******"
+                placeholder="Password"
                 name="password"
                 type="password"
                 id="pwd"

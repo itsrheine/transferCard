@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardHeading,
   CardBody,
-  CardFieldset,
   CardButton,
 } from "../components/SignCard";
 
@@ -41,22 +40,16 @@ function Login(props) {
 
         <CardBody>
           <form onSubmit={handleFormSubmit}>
-            <CardFieldset>
             <div className="flex-row space-between my-2">
-              <label htmlFor="email">Email address:</label>
-              {/* <CardInput> */}
                 <input
                   placeholder="youremail@test.com"
                   name="email"
                   type="email"
                   id="email"
                   onChange={handleChange}/>
-              {/* </CardInput> */}
             </div>
-            </CardFieldset>
           
             <div className="flex-row space-between my-2">
-                <label htmlFor="pwd">Password:</label>
                 <input
                   placeholder="******"
                   name="password"
