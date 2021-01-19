@@ -4,7 +4,6 @@ import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import {
-  CardHeader,
   CardHeading,
   CardBody,
   CardButton,
@@ -36,9 +35,7 @@ function Signup(props) {
 
   return (
     <div className="container my-1">
-        <CardHeader>
-          <CardHeading><h2>Signup</h2></CardHeading>
-        </CardHeader>
+          <CardHeading><h2 class="passport-header">Signup</h2></CardHeading>
         <CardBody>
           <form onSubmit={handleFormSubmit}>
               <div className="flex-row space-between my-2">
@@ -83,12 +80,6 @@ function Signup(props) {
                   Create Account
                 </button>
               </CardButton>
-            </div>
-
-            <div className="flex-row flex-end">
-              <Link to="/login">
-              I already have an account
-              </Link>
             </div>
           </form>
         </CardBody>

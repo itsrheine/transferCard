@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from "../utils/mutations"
 import Auth from "../utils/auth";
 import {
-  CardHeader,
   CardHeading,
   CardBody,
   CardButton,
@@ -34,9 +33,7 @@ function Login(props) {
 
   return (
     <div className="container my-1">
-        <CardHeader>
-          <CardHeading><h2>Login</h2></CardHeading>
-        </CardHeader>
+          <CardHeading><h2 class="passport-header">Login</h2></CardHeading>
 
         <CardBody>
           <form onSubmit={handleFormSubmit}>

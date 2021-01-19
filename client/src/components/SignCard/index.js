@@ -11,12 +11,6 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
 `;
 
-export const CardHeader = styled.header`
-  color: #fff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`;
-
 export const CardHeading = styled.h1`
   font-size: 24px;
   font-weight: bold;
@@ -55,24 +49,6 @@ export const CardOptionsNote = styled.small`
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
-`;
-
-export const CardOptions = styled.ul`
-  padding: 0;
-  margin: 16px 0 8px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  list-style-type: none;
-`;
-
-export const CardOptionsItem = styled.li`
-  &:nth-of-type(n + 2) {
-    margin-left: 16px;
-  }
 `;
 
 export const CardButton = styled.button`

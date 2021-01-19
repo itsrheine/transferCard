@@ -95,6 +95,16 @@ header a {
   color: var(--light);
 }
 
+.passport-header {
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.passport-message {
+  color: var(--tertiary)
+}
+
 ul {
   list-style-type: none;
 }
@@ -127,7 +137,7 @@ span[role="img"] {
 }
 
 form {
-  width: 40%;
+  width: 100%;
 }
 
 input {
@@ -221,6 +231,18 @@ input:focus {
   padding: 25px;
   background-color:#ddd;
   opacity: 0.75;
+}
+
+.ticket-logo {
+  width: 10%;
+}
+
+.signup-toggle {
+  color: var(--tertiary);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  width: 293px
 }
 
 @media screen and (max-width: 768px) {
