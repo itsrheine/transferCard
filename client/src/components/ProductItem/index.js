@@ -7,7 +7,6 @@ import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
   
-
   const {
     image,
     name,
