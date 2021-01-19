@@ -75,10 +75,8 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row flex-end">
-              <CardButton>
-                <button type="submit">
+              <CardButton type="submit">
                   Create Account
-                </button>
               </CardButton>
             </div>
           </form>

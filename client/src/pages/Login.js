@@ -60,10 +60,8 @@ function Login(props) {
                 </div> : null
               }
               <div className="flex-row flex-end">
-                <CardButton>
-                  <button type="submit">
+                <CardButton type="submit">
                     Submit
-                  </button>
                 </CardButton>
               </div>
             </form>

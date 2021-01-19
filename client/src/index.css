@@ -109,7 +109,7 @@ ul {
   list-style-type: none;
 }
 
-button {
+/* button {
   font-size: 1rem;
   text-decoration: none;
   border: none;
@@ -117,15 +117,6 @@ button {
   cursor: pointer;
   margin: 2px;
   background-color: var(--secondary);
-}
-
-/* button:hover {
-  opacity: .8;
-}
-
-button[disabled] {
-  cursor: default;
-  opacity: .8;
 } */
 
 img {
