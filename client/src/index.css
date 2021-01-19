@@ -88,10 +88,15 @@ a:hover {
 
 header {
   background: var(--primary);
+  text-decoration: none;
 }
 
 header a {
   color: var(--light);
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
@@ -100,7 +105,7 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  /* margin: 0 1px; */
   background-color: var(--secondary);
 }
 
@@ -148,6 +153,7 @@ input:focus {
 
 .flex-row {
   display: flex;
+  padding: 5px;
   flex-wrap: wrap;
 }
 

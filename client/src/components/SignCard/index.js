@@ -53,7 +53,6 @@ export const CardLabelInput = styled.input `
 
 export const CardInput = styled.input`
   padding: 7px 0;
-  width: 100%;
   font-family: inherit;
   font-size: 14px;
   border-top: 0;
