@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 function UserInfo() {
 
+    const dispatch = useDispatch();
+      
+    dispatch({
+       firstName,
+       lastName,
+       email
+    });
+
     return (
         <div className="card px-1 py-1">
             <Link to={`/users`}>
