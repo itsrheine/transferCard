@@ -88,32 +88,36 @@ a:hover {
 
 header {
   background: var(--primary);
+  text-decoration: none;
 }
 
 header a {
   color: var(--light);
 }
 
-button {
+.passport-header {
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.passport-message {
+  color: var(--tertiary)
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* button {
   font-size: 1rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
-  border-radius: .5rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 2px;
   background-color: var(--secondary);
-}
-
-button:hover {
-  opacity: .8;
-}
-
-button[disabled] {
-  cursor: default;
-  opacity: .8;
-}
+} */
 
 img {
   max-width: 100%;
@@ -124,7 +128,7 @@ span[role="img"] {
 }
 
 form {
-  width: 40%;
+  width: 100%;
 }
 
 input {
@@ -150,6 +154,7 @@ input:focus {
 
 .flex-row {
   display: flex;
+  padding: 5px;
   flex-wrap: wrap;
 }
 
@@ -219,8 +224,79 @@ input:focus {
   opacity: 0.75;
 }
 
+.ticket-logo {
+  width: 10%;
+}
+
+.signup-toggle {
+  color: var(--tertiary);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  width: 293px
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
   }
+}
+
+/*  proj 3/ transfercard route testing  */
+.bartmap {
+  display: block;
+  border: solid;
+  margin: 10%;
+  margin-top: 30px;
+  width: 75%;
+}
+
+.container-map {
+  position: relative;
+  display: flex;
+  opacity: 0.8;
+}
+
+.result {
+  color: black;
+  margin: auto;
+  padding-left: 5%;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  margin-top: 20px;
+  padding-bottom: 10%;
+}
+
+.stations {
+  margin-top: 10% ;
+  padding-top: 0;
+}
+
+select {
+  font-size: 20px;
+  font-family: Arial;
+  color: white;
+  letter-spacing: .5em;
+  background-color: dodgerblue;
+  padding-left: 5px;   
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  padding: 10px; 
+  width: 320px;
+  text-indent: 27px;
+  font-family: Palatino Linotype;
+  font-size: 15px;
+  margin: 10px
+}
+
+.bg {
+  opacity: 0.75;
+  width: 90%;
+  float: left;
+  padding: 25px;
+  background-color:#ddd;
+  opacity: 0.75;
 }

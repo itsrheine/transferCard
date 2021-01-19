@@ -4,10 +4,8 @@ import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import {
-  CardHeader,
   CardHeading,
   CardBody,
-  CardFieldset,
   CardButton,
 } from "../components/SignCard";
 
@@ -37,27 +35,21 @@ function Signup(props) {
 
   return (
     <div className="container my-1">
-        <CardHeader>
-          <CardHeading><h2>Signup</h2></CardHeading>
-        </CardHeader>
+          <CardHeading><h2 class="passport-header">Signup</h2></CardHeading>
         <CardBody>
           <form onSubmit={handleFormSubmit}>
-            <CardFieldset>
               <div className="flex-row space-between my-2">
-                <label htmlFor="firstName">First Name:</label>
                 <input
-                  placeholder="First"
+                  placeholder="First Name"
                   name="firstName"
                   type="firstName"
                   id="firstName"
                   onChange={handleChange}
                 />
               </div>
-            </CardFieldset>
             <div className="flex-row space-between my-2">
-              <label htmlFor="lastName">Last Name:</label>
               <input
-                placeholder="Last"
+                placeholder="Last Name"
                 name="lastName"
                 type="lastName"
                 id="lastName"
@@ -65,7 +57,6 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row space-between my-2">
-              <label htmlFor="email">Email:</label>
               <input
                 placeholder="youremail@test.com"
                 name="email"
@@ -75,9 +66,8 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row space-between my-2">
-              <label htmlFor="pwd">Password:</label>
               <input
-                placeholder="******"
+                placeholder="Password"
                 name="password"
                 type="password"
                 id="pwd"
@@ -85,17 +75,9 @@ function Signup(props) {
               />
             </div>
             <div className="flex-row flex-end">
-              <CardButton>
-                <button type="submit">
+              <CardButton type="submit">
                   Create Account
-                </button>
               </CardButton>
-            </div>
-
-            <div className="flex-row flex-end">
-              <Link to="/login">
-              I already have an account
-              </Link>
             </div>
           </form>
         </CardBody>

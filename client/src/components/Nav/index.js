@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import logoIcon from '../../assets/TRANSCARD LOGO.png'
 
 function Nav() {
 
@@ -63,7 +64,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🎫</span>
+        <img src={logoIcon} alt="logo" class="ticket-logo" /> 
           TransferCard
         </Link>
       </h1>

@@ -3,10 +3,8 @@ import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from "../utils/mutations"
 import Auth from "../utils/auth";
 import {
-  CardHeader,
   CardHeading,
   CardBody,
-  CardFieldset,
   CardButton,
 } from "../components/SignCard";
 
@@ -35,30 +33,22 @@ function Login(props) {
 
   return (
     <div className="container my-1">
-        <CardHeader>
-          <CardHeading><h2>Login</h2></CardHeading>
-        </CardHeader>
+          <CardHeading><h2 class="passport-header">Login</h2></CardHeading>
 
         <CardBody>
           <form onSubmit={handleFormSubmit}>
-            <CardFieldset>
             <div className="flex-row space-between my-2">
-              <label htmlFor="email">Email address:</label>
-              {/* <CardInput> */}
                 <input
                   placeholder="youremail@test.com"
                   name="email"
                   type="email"
                   id="email"
                   onChange={handleChange}/>
-              {/* </CardInput> */}
             </div>
-            </CardFieldset>
           
             <div className="flex-row space-between my-2">
-                <label htmlFor="pwd">Password:</label>
                 <input
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   id="pwd"
@@ -70,10 +60,8 @@ function Login(props) {
                 </div> : null
               }
               <div className="flex-row flex-end">
-                <CardButton>
-                  <button type="submit">
+                <CardButton type="submit">
                     Submit
-                  </button>
                 </CardButton>
               </div>
             </form>
