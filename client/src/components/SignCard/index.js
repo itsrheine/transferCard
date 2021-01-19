@@ -22,10 +22,6 @@ export const CardBody = styled.div`
   padding-left: 32px;
 `;
 
-export const CardLabelInput = styled.input `
-  color: #fff;
-`;
-
 export const CardInput = styled.input`
   padding: 7px 0;
   font-family: inherit;
@@ -40,15 +36,6 @@ export const CardInput = styled.input`
     border-bottom-color: #e5195f;
     outline: 0;
   }
-`;
-
-export const CardOptionsNote = styled.small`
-  padding-top: 8px;
-  display: block;
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
 `;
 
 export const CardButton = styled.button`
@@ -75,19 +62,5 @@ export const CardButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
     opacity: .8;
-  }
-`;
-
-export const CardLink = styled.a`
-  display: inline-block;
-  font-size: 12px;
-  text-decoration: none;
-  color: #aaa;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  transition: color 0.25s ease-in;
-
-  &:hover {
-    color: #777;
   }
 `;
