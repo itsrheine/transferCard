@@ -51,7 +51,7 @@ function Login(props) {
           
             <div className="flex-row space-between my-2">
                 <input
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   id="pwd"

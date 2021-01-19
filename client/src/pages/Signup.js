@@ -42,7 +42,6 @@ function Signup(props) {
         <CardBody>
           <form onSubmit={handleFormSubmit}>
               <div className="flex-row space-between my-2">
-                {/* <label htmlFor="firstName">First Name:</label> */}
                 <input
                   placeholder="First Name"
                   name="firstName"
