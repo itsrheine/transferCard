@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import Login from "../components/Login";
+import Signup from "../components/Signup";
 import { CardWrapper } from "../components/SignCard";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
           ) : 
           <Login />
         } 
-        <button class="signup-toggle" onClick={() => setShow(!show)}>{show ? "I already have an account" : "I want sign up"}</button>
+        <button className="signup-toggle" onClick={() => setShow(!show)}>{show ? "I already have an account" : "I want sign up"}</button>
       </CardWrapper>
      
     </div>

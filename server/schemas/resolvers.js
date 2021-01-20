@@ -66,6 +66,8 @@ const resolvers = {
                   description: products[i].description,
                   images: [`${url}/images/${products[i].image}`]
                 });
+                console.log(`${url}`)
+                console.log(`${url}/images/${products[i].image}`)
       
                 // generate price id using the product id
                 const price = await stripe.prices.create({
@@ -80,6 +82,7 @@ const resolvers = {
                   quantity: 1
                 });
               };
+              
               const session = await stripe.checkout.sessions.create({
                 payment_method_types: ['card'],
                 line_items,
