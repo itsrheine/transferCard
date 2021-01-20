@@ -277,7 +277,7 @@ input:focus {
 
 select {
   font-size: 20px;
-  font-family: Arial;
+  font-family: "Gill Sans", sans-serif;;
   color: white;
   letter-spacing: .5em;
   background-color: dodgerblue;
@@ -287,7 +287,6 @@ select {
   padding: 10px; 
   width: 320px;
   text-indent: 27px;
-  font-family: Palatino Linotype;
   font-size: 15px;
   margin: 10px
 }
@@ -299,4 +298,12 @@ select {
   padding: 25px;
   background-color:#ddd;
   opacity: 0.75;
+}
+
+.mainfooter  {
+  font-size: 1rem;
+  font-family: "Gill Sans", sans-serif;
+  opacity: 1;
+  color: white;
+  text-align: center;
 }

@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import Tickets from "./pages/Store";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import Footer from "./components/Footer";
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -40,6 +41,11 @@ function App() {
               <Route exact path="/profile" component={Profile} />
               <Route component={Home} />
             </Switch>
+            <Footer>
+              <span class="mainfooter">
+                Created by David, Mahmoud, Blue and Rheine
+              </span>
+            </Footer>
           </Provider>
         </div>
       </Router>
