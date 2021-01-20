@@ -17,7 +17,7 @@ const Faq = () => {
           <p>*We currently do not accept travelers cheques or money orders.</p>
         </div>
         <div class="column">
-          <h2>How do I use my Transfer card?</h2>
+          <h2>How do I use my TransferCard?</h2>
           <p>To use your card, locate your transferCard and tag it by holding it on top of the train's card reader.  The reader will be on the train station platform.  At the end of your trip, you will need to tag your card again since charges are based on distance or zones.</p>
           <p>Your transferCard will let you know if it is expired when the card reader beeps twice and flashes a yellow light.</p>
           <p>If your transferCard barcode does not work or is not accepted, please contact us via <a href="info@transferCard.com">info@transferCard.com</a>.</p>
