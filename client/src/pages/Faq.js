@@ -8,7 +8,7 @@ const Faq = () => {
         <div class="column">
           <h2>How to Purchase Tickets - Online and Mobile</h2>
           <p><i>For your convenience and for your safety, transferCard is now exclusively accepting cashless payments on web and mobile application.</i></p>
-          <p>Purchase your tickets at any time on URLHERE with:
+          <p>Purchase your tickets at any time on <a href="https://transferCard.herokuapp.com">transferCard</a> with:
             <ul>
               <li>Valid credit card (Visa, Mastercard®, American Express, Discover®)</li>
               <li>Google Pay</li>
