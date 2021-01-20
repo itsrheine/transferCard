@@ -1,11 +1,6 @@
 import React from 'react';
 import BARTmap from '../assets/BART-System-Map-API.png'
 
-// using useState
-// const Routes = () => {
-// const [name, setName] = useState('')
-// }
-
 class Routes extends React.Component {
   state = {
     name: '',
@@ -19,18 +14,12 @@ class Routes extends React.Component {
       .then(response => response.json())
       .then(response => {
         let { name, direction, num_stns } = response.root.routes.route;
-        // let  station  = JSON.stringify(response.root.routes.route.config.station)
-        // .replace(/"/g, " ")
-        // .replace(/[\[\]']+/g, " ")
-        // .replace(/,/g, " ")
+
         console.log(response)
 
         this.setState({
           name, direction, num_stns
         })
-
-        // using useState()
-        // setName(name);
 
       });
   }

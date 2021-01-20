@@ -254,7 +254,7 @@ input:focus {
 .container-map {
   position: relative;
   display: flex;
-  opacity: 0.8;
+  
 }
 
 .result {
@@ -265,7 +265,6 @@ input:focus {
 
 .custom-select {
   position: relative;
-  font-family: Arial;
   margin-top: 20px;
   padding-bottom: 10%;
 }
@@ -276,27 +275,21 @@ input:focus {
 }
 
 select {
-  font-size: 20px;
-  font-family: Arial;
-  color: white;
-  letter-spacing: .5em;
-  background-color: dodgerblue;
+  color: #000000;
+  background-color: #ffa600;
   padding-left: 5px;   
   border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
   padding: 10px; 
   width: 320px;
-  text-indent: 27px;
-  font-family: Palatino Linotype;
-  font-size: 15px;
-  margin: 10px
+  text-indent: 20px;
+  font-size: 25px;
+  margin-top: 10px
 }
 
 .bg {
-  opacity: 0.75;
+  opacity: 0.8;
   width: 90%;
   float: left;
   padding: 25px;
   background-color:#ddd;
-  opacity: 0.75;
 }
