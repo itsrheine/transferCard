@@ -34,7 +34,7 @@ function Signup(props) {
 
   return (
     <div className="container my-1">
-          <CardHeading><h2 class="passport-header">Signup</h2></CardHeading>
+          <CardHeading className="passport-header">Signup</CardHeading>
         <CardBody>
           <form onSubmit={handleFormSubmit}>
               <div className="flex-row space-between my-2">
