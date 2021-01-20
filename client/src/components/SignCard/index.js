@@ -11,7 +11,7 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
 `;
 
-export const CardHeading = styled.h1`
+export const CardHeading = styled.h2`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
