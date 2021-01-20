@@ -33,7 +33,7 @@ function Login(props) {
 
   return (
     <div className="container my-1">
-          <CardHeading><h2 class="passport-header">Login</h2></CardHeading>
+          <CardHeading><h2 className="passport-header">Login</h2></CardHeading>
 
         <CardBody>
           <form onSubmit={handleFormSubmit}>
