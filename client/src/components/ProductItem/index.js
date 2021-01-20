@@ -10,11 +10,7 @@ function ProductItem(item) {
     image,
     name,
     _id,
-<<<<<<< HEAD
     price
-=======
-    price,
->>>>>>> feature/signup
   } = item;
   const state = useSelector(state => state);
   const dispatch = useDispatch();
