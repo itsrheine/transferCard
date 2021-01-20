@@ -77,7 +77,7 @@ p {
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: bold;
 }

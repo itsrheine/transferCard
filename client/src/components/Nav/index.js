@@ -39,7 +39,7 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row">
+        <ul className="flex-row nav">
         <li className="mx-1">
           <Link to="/store">
             Tickets
