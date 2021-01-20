@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import Login from "../components/Login";
+import Signup from "../components/Signup";
 import { CardWrapper } from "../components/SignCard";
 
 const Home = () => {

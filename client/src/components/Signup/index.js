@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
-import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+import Auth from "../../utils/auth";
+import { ADD_USER } from "../../utils/mutations";
 import {
   CardHeading,
   CardBody,
   CardButton,
-} from "../components/SignCard";
+} from "../SignCard";
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
