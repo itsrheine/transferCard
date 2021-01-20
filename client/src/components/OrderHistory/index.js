@@ -20,7 +20,7 @@ function OrderHistory() {
                         <div key={order._id} className="card px-1 py-1">
                             <p>Date Purchased: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</p>
                             {order.products.map(({ name, price }, index) => (
-                                <p key={index}>Ticket: {name} {price}</p>
+                                <p key={index}>Ticket: {name} - ${price}</p>
                             ))}
                         </div>
                 ))}
