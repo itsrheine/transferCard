@@ -36,5 +36,5 @@ Created by:
 * Blue Abad ([bibo1011](https://github.com/bibo1011)) 
 
 ## Screenshot
-
+![Screenshot](client/src/assets/Front Page.PNG)
 
