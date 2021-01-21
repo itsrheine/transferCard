@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -10,7 +9,7 @@ function ProductItem(item) {
     image,
     name,
     _id,
-    price,
+    price
   } = item;
   const state = useSelector(state => state);
   const dispatch = useDispatch();
@@ -40,17 +39,18 @@ function ProductItem(item) {
 
   return (
     <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
+      <span to={`/products/${_id}`}>
         <img
           alt={name}
           src={`/images/${image}`}
         />
         <br/>{name}
-      </Link>
+      </span>
       <div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      
+      <button className="atc" onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

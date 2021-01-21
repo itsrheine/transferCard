@@ -11,18 +11,18 @@ function Success() {
     async function saveOrder() {
       const cart = await idbPromise('cart', 'get');
       const products = cart.map(item => item._id);
-      
+
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
-    
+
         productData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
       }
-        
+
       setTimeout(() => {
-        window.location.assign('/');
+        window.location.assign('/profile');
       }, 3000);
     }
 
@@ -32,15 +32,22 @@ function Success() {
   return (
     <div>
       <Jumbotron>
-        <h1>Success!</h1>
-        <h2>
-          Thank you for your purchase!
-        </h2>
-        <h2>
-          You will now be redirected to the home page
-        </h2>
+
+        <div className="container">
+          <div class="row">
+            <div class="column">
+              <h2>Success!</h2>
+              <h2>
+                Thank you for your purchase!
+              </h2>
+              <h2>
+                You will now be redirected to the home page
+              </h2>
+            </div>
+          </div>
+        </div>
       </Jumbotron>
-    </div>
+  </div>
   );
 };
 

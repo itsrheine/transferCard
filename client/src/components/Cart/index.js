@@ -24,6 +24,7 @@ const Cart = () => {
           });
         }
       }, [data]);
+      console.log(data)
 
     useEffect(() => {
         async function getCart() {
