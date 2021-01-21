@@ -315,3 +315,24 @@ select {
   padding: 25px;
   background-color:#ddd;
 }
+
+/* add to cart button */
+
+.atc {
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 200;
+  color: #000;
+  width: 150px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  margin-left: 65px;
+  padding: 5px;
+  background-color: var(--secondary);
+}
