@@ -3,7 +3,7 @@
     "short_name": "Transfer",
     "icons": [
         {
-            "src": "./icons/icon-72x72.png",
+            "src": "./assets/icon/icon-72x72.png",
             "type": "image/png",
             "sizes": "72x72"
         },
