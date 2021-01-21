@@ -267,7 +267,7 @@ input:focus {
 .bartmap {
   display: block;
   border: solid;
-  width: 79%;
+  width: 75%;
   opacity: 0.8;
   margin: 0;
 }
