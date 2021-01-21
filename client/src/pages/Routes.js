@@ -10,7 +10,7 @@ class Routes extends React.Component {
 
   handleChange = (event) => {
     const routeId = event.target.value;
-    fetch('http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=' + routeId + '&key=MW9S-E7SL-26DU-VV8V&json=y')
+    fetch('https://api.bart.gov/api/route.aspx?cmd=routeinfo&route=' + routeId + '&key=MW9S-E7SL-26DU-VV8V&json=y')
       .then(response => response.json())
       .then(response => {
         let { name, direction, num_stns } = response.root.routes.route;
@@ -30,11 +30,11 @@ class Routes extends React.Component {
 
     return (
     <div className="container-map">
-      <div >
+      <div className="map">
         <img className="bartmap" src={BARTmap} alt="map"/>
       </div>
           
-      <div className="container">
+      <div className="container container-mobile ">
         <div className="custom-select">
           <select onChange={this.handleChange}>
             <option value="" disabled selected>Choose your route</option>
@@ -48,8 +48,8 @@ class Routes extends React.Component {
             <option value="8">MLBR-RICH</option>
           </select>
         </div>
-        <div className="row bg">
-          <div className="col-6 result">
+        <div className="bg">
+          <div className="result">
             <div>
               <h1>Route: </h1>
               <h1>{name}</h1>
