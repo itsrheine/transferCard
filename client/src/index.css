@@ -222,6 +222,7 @@ input:focus {
   padding: 25px;
   background-color:#ddd;
   opacity: 0.75;
+  text-align: center;
 }
 
 .ticket-logo {

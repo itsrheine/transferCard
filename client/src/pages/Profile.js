@@ -8,12 +8,12 @@ const Profile = () => {
   return (
     <div className="container">
       <div class="row">
-        <div class="column">
-          <h3>User Info</h3>
+        <div class="column px-1 py-1">
+          <h2>User Info</h2>
           <UserInfo />
         </div>
         <div class="column">
-          <h3>Order History</h3>
+          <h2>Order History</h2>
           <OrderHistory />
         </div>
       </div>

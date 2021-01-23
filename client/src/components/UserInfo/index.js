@@ -15,10 +15,8 @@ function UserInfo() {
         <>
         {user ? (
           <>
-            <div className="card px-1 py-1">
-              <p>First Name: {user.firstName}</p>
-              <p>Last Name: {user.lastName}</p>
-            </div>
+              <h5>First Name: {user.firstName}</h5>
+              <h5>Last Name: {user.lastName}</h5>
           </>
         ) : null}
 
