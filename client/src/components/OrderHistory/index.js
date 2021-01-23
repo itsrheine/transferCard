@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
@@ -76,28 +76,26 @@ function OrderHistory() {
             {user ? (
                 <>
                     {user.orders.map((order) => (
-                        <div key={order._id} className="px-1 py-1">
-                            <h5>Date Purchased: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</h5>
-                            {order.products.map(({ name, price }, index) => (
-                                <h5 key={index}>Ticket: {name} - ${price}</h5>
-                            ))}
-                        </div>
-                    ))}
-                </>
-            ) : null}
-
-            <div className={classes.root}>
-                <Grid container spacing={1}>
-                    <Grid container item xs={12} spacing={2}>
-                        <FormRow />
-                    </Grid>
-                </Grid>
-                {/* <Grid container spacing={1}>
-                    <Grid container item xs={12} spacing={2}>
-                        <MappingRow />
-                    </Grid>
-                </Grid> */}
-            </div>
-        </>)
+                        <div key={order._id} className="card px-1 py-1">
+                            <p>Date Purchased: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</p>
+                            {order.products.map(({ name, price, image }, index) => (
+                                 <div key={index} className="card px-1 py-1">
+                                 <Link to={`/products/${image}`}>
+                                   <img
+                                     alt={name}
+                                     src={`/images/${image}`}
+                                   />
+                                   <p>{name}</p>
+                                 </Link>
+                                 <div>
+                                   <span>${price}</span>
+                                 </div>
+                               </div>
+                             ))}
+                           </div>
+                       ))}
+                     </>
+                   ) : null}
+    </>)
 };
 export default OrderHistory;
