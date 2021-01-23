@@ -1,9 +1,11 @@
 # transferCard
 
 ## Description
+
 Travel with ease with our new contactless virtual train ticket, transferCard.  Say goodbye to your paper train tickets! By using transferCard, you will now be able to purchase your train tickets online and bring it along with you via mobile. You can scan your barcode at the station for entering and exiting.
 
 ## Functionality 
+
 1. After logging in,
     * I am presented with the tickets page, where I can choose to purchase train tickets.
 2. If I click add to cart,
@@ -34,6 +36,7 @@ Travel with ease with our new contactless virtual train ticket, transferCard.  S
 - Heroku
 
 ## Installation
+
 - Cloning the repository is an option. Otherwise, visiting the deployed website is fine.
 - After cloning, install the npm packages by running 'npm install' in the terminal. 
 - After all of the packages are installed, run 'npm start' to begin the application.
