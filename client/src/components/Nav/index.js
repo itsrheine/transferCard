@@ -10,13 +10,18 @@ function Nav() {
       return(
         <ul className="flex-row">
           <li className="mx-1">
+            <Link to="/transfercard">
+              My TransferCard
+            </Link>
+          </li>
+          <li className="mx-1">
             <Link to="/profile">
               Profile
             </Link>
           </li>
           <li className="mx-1">
             <Link to="/store">
-              Tickets
+              Store
             </Link>
           </li>
           <li className="mx-1">

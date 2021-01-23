@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Tickets from "./pages/Store";
+import TransferCard from "./components/TransferCard";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Footer from "./components/Footer";
@@ -41,6 +42,7 @@ function App() {
               <Route exact path="/routes" component={Routes} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/profile" component={Profile} />
+              <Route exact path="/transfercard" component={TransferCard} />
               <Route component={Home} />
             </Switch>
             <Footer>
