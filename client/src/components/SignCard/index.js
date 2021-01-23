@@ -1,4 +1,4 @@
-import styled  from "styled-components";
+import styled from "styled-components";
 
 export const CardWrapper = styled.div`
   background: #00000093;  
@@ -63,4 +63,14 @@ export const CardButton = styled.button`
     transform: translate(0, -5px);
     opacity: .8;
   }
+`;
+
+export const OrderStyle = styled.div`
+  float: left;
+  width: 100%;
+  margin: 25px 0px 0px;
+  padding: 25px;
+  background-color:#ddd;
+  opacity: 1;
+  text-align: center;
 `;

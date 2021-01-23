@@ -18,8 +18,9 @@ function TransferCard() {
             <div className="container">
                 <div class="row">
                     <div class="column">
-                        <h3>My TransferCard</h3>
+                        <h2>My TransferCard</h2>
                         </div>
+                        
                         {user ? (
                             <>
                                 {user.orders.map((order) => (

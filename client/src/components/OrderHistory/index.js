@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -34,13 +35,13 @@ function OrderHistory() {
         return (
             <React.Fragment>
                 <Grid item xs={4}>
-                    <Paper className={classes.paper}>Date Purchased</Paper>
+                    <Paper className={classes.paper}><b>Date Purchased</b></Paper>
                 </Grid>
                 <Grid item xs={4}>
-                    <Paper className={classes.paper}>Ticket</Paper>
+                    <Paper className={classes.paper}><b>Ticket</b></Paper>
                 </Grid>
                 <Grid item xs={4}>
-                    <Paper className={classes.paper}>Price</Paper>
+                    <Paper className={classes.paper}><b>Price</b></Paper>
                 </Grid>
             </React.Fragment>
         );
@@ -49,90 +50,54 @@ function OrderHistory() {
     function MappingRow() {
         return (
 
-            <React.Fragment>
-                <>
-                    {user ? (
-                        <>
-                            {user.orders.map((order) => (
+            <>
+                {user ? (
+                    <>
+                        {user.orders.map((order) => (
+
+                            <React.Fragment key={order._id}>
+
                                 <Grid item xs={4} key={order._id}>
                                     <Paper className={classes.paper}>{new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</Paper>
-                                    {order.products.map(({ name }, index) => (
-                                        <Paper item xs={4} key={index}>
-                                            <Paper className={classes.paper}>{name}</Paper>
-                                        </Paper>
-                                    ))}
-
-                                    {order.products.map(({ price }, index) => (
-                                        <Paper item xs={4} key={index}>
-                                            <Paper className={classes.paper}>${price}</Paper>
-                                        </Paper>
-                                    ))}
                                 </Grid>
-                                
-                            ))}
-                        </>
-                    ) : null}
-                </>
-            </React.Fragment>
+                                {order.products.map(({ name }, index) => (
+                                    <Grid item xs={4} key={index}>
+                                        <Paper className={classes.paper}>{name}</Paper>
+                                    </Grid>
+                                ))}
+                                {order.products.map(({ price }, index) => (
+                                    <Grid item xs={4} key={index}>
+                                        <Paper className={classes.paper}>${price}</Paper>
+                                    </Grid>
+                                ))}
 
+                            </React.Fragment>
+                        ))}
+                    </>
+                ) : null}
+            </>
 
-            // <React.Fragment>
-            //     <>
-            //         {user ? (
-            //             <>
-            //                 {user.orders.map((order) => (
-            //                     <Grid item xs={4} key={order._id}>
-            //                         <Paper className={classes.paper}>{new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</Paper>
-            //                         {order.products.map(({ name }, index) => (
-            //                             <Paper item xs={4} key={index}>
-            //                                 <Paper className={classes.paper}>{name}</Paper>
-            //                             </Paper>
-            //                         ))}
-
-            //                         {order.products.map(({ price }, index) => (
-            //                             <Paper item xs={4} key={index}>
-            //                                 <Paper className={classes.paper}>${price}</Paper>
-            //                             </Paper>
-            //                         ))}
-            //                     </Grid>
-            //                 ))}
-            //             </>
-            //         ) : null}
-            //     </>
-            // </React.Fragment>
         )
     };
 
 
 
     return (
-            <>
-                {user ? (
-                    <>
-                        {user.orders.map((order) => (
-                            <div key={order._id} className="px-1 py-1">
-                                <h5>Date Purchased: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</h5>
-                                {order.products.map(({ name, price }, index) => (
-                                    <h5 key={index}>Ticket: {name} - ${price}</h5>
-                                ))}
-                            </div>
-                        ))}
-                    </>
-                ) : null}
 
-                <div className={classes.root}>
-                    <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={2}>
-                            <FormRow />
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={2}>
-                            <MappingRow />
-                        </Grid>
-                    </Grid>
-                </div>
-            </>)
-    };
+        <div className={classes.root}>
+            <Grid container spacing={1}>
+                <Grid container item xs={12}>
+                    <FormRow />
+                </Grid>
+            </Grid>
+            <Grid container spacing={1}>
+                <Grid container item xs={12}>
+                    <MappingRow />
+                </Grid>
+            </Grid>
+        </div>
 
-    export default OrderHistory;
+    )
+};
+
+export default OrderHistory;
