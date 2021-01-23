@@ -14,30 +14,30 @@ function TransferCard() {
     }
 
     return (
-        <>
-            <div className="container">
-                <div class="row">
-                    <div class="column">
-                        <h2>My TransferCard</h2>
-                        </div>
-                        
-                        {user ? (
-                            <>
-                                {user.orders.map((order) => (
-                                    <div key={order._id} className="my-2">
-                                        {order.products.map(({ name, image }, index) => (
-                                            <div key={index} className="card px-1 py-1">
-                                                <img alt={name} src={`/images/${image}`} />
-                                            </div>
-                                        ))}
+
+        <div className="my-2">
+            <div class="column">
+                <h3>My TransferCard</h3>
+            </div>
+
+            <>
+                {user ? (
+                    <>
+                        {user.orders.map((order) => (
+                            <div key={order._id} className="flex-row">
+                                {order.products.map(({ name, image }, index) => (
+                                    <div key={index} className="flex-row">
+                                        <img alt={name} src={`/images/${image}`} />
                                     </div>
                                 ))}
-                            </>
-                        ) : null}
-                </div>
-            </div>
-        </>)
+                            </div>
+                        ))}
+                    </>
+                ) : null}
+            </>
+        </div>
 
+    )
 };
 
 export default TransferCard;

@@ -105,6 +105,12 @@ header a {
   color: var(--tertiary)
 }
 
+.flex-row {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 ul {
   list-style-type: none;
 }
@@ -156,6 +162,8 @@ input:focus {
   display: flex;
   padding: 5px;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .space-between {
@@ -237,6 +245,12 @@ input:focus {
   width: 293px
 }
 
+.mytransfercard {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -261,7 +275,6 @@ input:focus {
     width: 294px;
     text-indent: 0;
     font-size: 25px;
-    
   }
 
   .column {
@@ -351,4 +364,7 @@ select {
   margin-left: 65px;
   padding: 5px;
   background-color: var(--secondary);
+  margin-left: auto;
+  margin-right: auto;
 }
+
