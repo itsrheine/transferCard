@@ -46,30 +46,6 @@ function OrderHistory() {
         );
     }
 
-    // function MappingRow() {
-    //     return (
-    //         <React.Fragment>
-
-    //     <>
-    //         {user ? (
-    //             <>
-    //                 {user.orders.map((order) => (
-
-    //             <Grid item xs={4} key={order._id}>
-    //                 <Paper className={classes.paper}>{new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</Paper>
-    //             </Grid>
-    //             {order.products.map(({ name }, index) => (
-    //             <Grid item xs={4} key={index}>
-    //                 <Paper className={classes.paper}>{name}</Paper>
-    //             </Grid>
-    //             ))}
-    //             <Grid item xs={4}>
-    //                 <Paper className={classes.paper}>{price}</Paper>
-    //             </Grid>
-    //         </React.Fragment>
-    //     );
-    // }
-
 
     return (
         <>
@@ -94,6 +70,8 @@ function OrderHistory() {
                              ))}
                            </div>
                        ))}
+
+                      <FormRow/>
                      </>
                    ) : null}
     </>)
