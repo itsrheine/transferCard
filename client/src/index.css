@@ -222,6 +222,7 @@ input:focus {
   padding: 25px;
   background-color:#ddd;
   opacity: 0.75;
+  text-align: center;
 }
 
 .ticket-logo {
@@ -267,7 +268,7 @@ input:focus {
 .bartmap {
   display: block;
   border: solid;
-  width: 79%;
+  width: 75%;
   opacity: 0.8;
   margin: 0;
 }

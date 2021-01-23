@@ -10,7 +10,7 @@ class Routes extends React.Component {
 
   handleChange = (event) => {
     const routeId = event.target.value;
-    fetch('https://api.bart.gov/api/route.aspx?cmd=routeinfo&route=' + routeId + '&key=MW9S-E7SL-26DU-VV8V&json=y')
+    fetch('https://cors-anywhere.herokuapp.com/http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=' + routeId + '&key=MW9S-E7SL-26DU-VV8V&json=y')
       .then(response => response.json())
       .then(response => {
         let { name, direction, num_stns } = response.root.routes.route;

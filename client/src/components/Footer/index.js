@@ -2,21 +2,23 @@ import React from 'react';
 
 const footerStyle = {
     backgroundColor: "black",
-    opacity: 0.4,
     textAlign: "center",
     padding: "20px",
     position: "fixed",
     left: "0",
     bottom: "0",
     height: "60px",
-    width: "100%"
+    width: "100%",
+    color: "white",
+    opacity: 0.35
 };
 
 const phantomStyle = {
     display: "block",
     padding: "20px",
     height: "60px",
-    width: "100%"
+    width: "100%",
+    opacity: 0.4,
 };
 
 function Footer({ children }) {
