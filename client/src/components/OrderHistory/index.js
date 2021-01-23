@@ -21,7 +21,7 @@ function OrderHistory() {
                             <p>Date Purchased: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</p>
                             {order.products.map(({ name, price, image }, index) => (
                                  <div key={index} className="card px-1 py-1">
-                                 <Link to={`/products/${image}`}>
+                                 <Link to={`/images/${image}`}>
                                    <img
                                      alt={name}
                                      src={`/images/${image}`}
