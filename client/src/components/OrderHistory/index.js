@@ -100,8 +100,4 @@ function OrderHistory() {
     )
 };
 
-<<<<<<< HEAD
-    export default OrderHistory;
-=======
 export default OrderHistory;
->>>>>>> ad9be4448426166dfad6e56854fca1a75a7e81a4
