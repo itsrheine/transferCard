@@ -105,6 +105,12 @@ header a {
   color: var(--tertiary)
 }
 
+.flex-row {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 ul {
   list-style-type: none;
 }
@@ -156,6 +162,8 @@ input:focus {
   display: flex;
   padding: 5px;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .space-between {
@@ -221,7 +229,7 @@ input:focus {
   margin: 25px 0px 0px;
   padding: 25px;
   background-color:#ddd;
-  opacity: 0.75;
+  opacity: 0.85;
   text-align: center;
 }
 
@@ -237,6 +245,12 @@ input:focus {
   width: 293px
 }
 
+.mytransfercard {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -250,6 +264,7 @@ input:focus {
   .container-mobile {
     padding-top: 110%;
     padding-right: 15%;
+    position: relative;
   }
 
   select {
@@ -260,7 +275,20 @@ input:focus {
     width: 294px;
     text-indent: 0;
     font-size: 25px;
-    
+  }
+
+  .column {
+    width: 100%;
+    font-size: small;
+    padding: 0px;
+  }
+  
+  h2 {
+   font-size: x-large;
+  }
+
+  h5 {
+    font-size: medium;
   }
 }
 
@@ -336,4 +364,7 @@ select {
   margin-left: 65px;
   padding: 5px;
   background-color: var(--secondary);
+  margin-left: auto;
+  margin-right: auto;
 }
+

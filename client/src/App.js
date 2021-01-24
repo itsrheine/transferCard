@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Tickets from "./pages/Store";
-import TransferCard from "./components/TransferCard";
+import TransferCard from "./pages/MyTransferCard";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Footer from "./components/Footer";

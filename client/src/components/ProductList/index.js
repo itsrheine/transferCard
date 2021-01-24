@@ -50,7 +50,9 @@ function filterProducts() {
 
   return (
     <div className="my-2">
-      <h2>Available Passes:</h2>
+      <div class="column">
+        <h3>Available Passes:</h3>
+      </div>
       {state.products.length ? (
         <div className="flex-row">
             {filterProducts().map(product => (

@@ -51,12 +51,12 @@ class Routes extends React.Component {
         <div className="bg">
           <div className="result">
             <div>
-              <h1>Route: </h1>
-              <h1>{name}</h1>
+              <h2>Route: </h2>
+              <h2>{name}</h2>
             </div>
             <div className="stations">
-              <h3>Direction: {direction}</h3>
-              <h3>Number of Stations: {num_stns}</h3>
+              <h2>Direction: {direction}</h2>
+              <h2>Number of Stations: {num_stns}</h2>
             </div>
           </div>
         </div>       
