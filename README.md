@@ -82,6 +82,8 @@ Created by:
     * Database
     * GraphQL
 
+- Marko Rodic ([xdMR](https://github.com/xdMR)) 
+    * Logo Design
 
 ## Screenshot
 ![Screenshot](client/src/assets/screenshot.PNG)
