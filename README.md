@@ -70,7 +70,7 @@ Created by:
     * PWA and Redux
     * Heroku Deployment
 
-- Marrione Nguyen ([itsrheine](https://github.com/itsrheine)) 
+- Rheine Tiamsic ([itsrheine](https://github.com/itsrheine)) 
     * Founder
     * Client Side (Front-End)
     * React (Front-End)
